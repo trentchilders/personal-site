@@ -1,4 +1,4 @@
 
 var sendAlert = function(){
-    alert('Hi!!!');
+    alert('Hello back');
 }
