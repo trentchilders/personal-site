@@ -1,3 +1,1 @@
-````
-code goes here
-```
+Pretty much a playground for me to practice stuff. Look for some React stuff and maybe some machine learning! Dope!
