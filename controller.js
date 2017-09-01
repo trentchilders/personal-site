@@ -6,3 +6,9 @@ var init = function(){
 var sendAlert = function(){
     alert('Hello back');
 }
+
+var toggleDropdown = function(){
+    debugger
+    var hamburger = document.getElementById('hamburger');
+    hamburger.dropdown();
+}
