@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="controller.js"></script>
@@ -19,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-brand navbar-brand-centered">Brand</div>
+                <div class="navbar-brand navbar-brand-centered">Trent Childers</div>
             </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,10 +64,50 @@
     </nav>
     <!-- navbar-brand-centered -->
 
-<div class="embed-responsive embed-responsive-4by3">
-<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/95nDnkxHjPE" frameborder="0" allowfullscreen></iframe>
-</div>  
+<div class="welcome-player" id="player"></div>
 
-<button type="button" class="btn btn-primary" onclick="sendAlert()">Click Here</button>
+<!-- <button type="button" class="btn btn-primary" onclick="sendAlert()">Click Here</button> -->
 
+<script>
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    debugger
+    var firstScriptTag = document.getElementsByTagName('script')[3];
+    
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'M7l9y26oRyE',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+        event.target.mute();
+
+    }
+
+   
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            event.target.playVideo();
+            
+        }
+    }
+
+    function stopVideo() {
+        player.stopVideo();
+    }
+</script>
 </body>
