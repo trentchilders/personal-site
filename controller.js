@@ -1,4 +1,4 @@
-
+var x;
 var init = function(){
     
     
@@ -6,5 +6,6 @@ var init = function(){
 }
 
 var sendAlert = function(){
-    alert('Hello back');
+
+    alert(x);
 }
