@@ -26,3 +26,9 @@
     background-color: #F8F8F8;
 }
 
+.cssans__word {
+    --cssans-primary: 77,174,80;
+    --cssans-secondary: 92,52,169;
+    --cssans-accent1: 234,102,6;
+    font-size: 55%;
+}
